@@ -3,7 +3,7 @@ using namespace std;
 int main() {
     int n;
     cout << "Bienvenido a Zenku" << endl;
-    cout<<"'o' es la bolita a mover"<<endl;
+    cout<<"'o' es la bolita a mover "<<endl;
     cout<<"'+' representa los espacios vacios"<<endl;
     cout<<"ganas cuando solo tines un 'o' en el tablero"<<endl;
 

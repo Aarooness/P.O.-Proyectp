@@ -1,0 +1,375 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int n;
+    cout << "Bienvenido a Zenku" << endl;
+    cout<<"'o' es la bolita a mover"<<endl;
+    cout<<"'+' representa los espacios vacios"<<endl;
+    cout<<"ganas cuando solo tines un 'o' en el tablero"<<endl;
+
+    cout << "Que tipo desea jugar" << endl;
+    cout << "Estilo Ingles: Introduzca el numero 1 " << endl;
+    cout << "Estilo frances: Introduzca el numero 2 " << endl;
+    cout << "Estilo aleman: Introduzca el numero 3" << endl;
+    cin >> n;
+
+    if (n == 2) {
+        int cont=0;
+        int fi;
+        int co;
+        int fi2;
+        int co2;
+        char matriz[7][7] = {{' ', ' ', 'o', 'o', 'o', ' ', ' '},
+                             {' ', 'o', 'o', 'o', 'o', 'o', ' '},
+                             {'o', 'o', 'o', 'o', 'o', 'o', 'o'},
+                             {'o', 'o', 'o', '+', 'o', 'o', 'o'},
+                             {'o', 'o', 'o', 'o', 'o', 'o', 'o'},
+                             {' ', 'o', 'o', 'o', 'o', 'o', ' '},
+                             {' ', ' ', 'o', 'o', 'o', ' ', ' '}};
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                cout << matriz[i][j] << "   ";
+            }
+            cout << endl;
+        }
+
+        for (int i = 0; i < 100; i = i++) {
+            cout << "Ingrese la posicion de origen(fila,columna)" << endl;
+            cin >> fi;
+            cin >> co;
+            cout << "Ingrese la posicion de destino(fila,columna)" << endl;
+            cin >> fi2;
+            cin >> co2;
+
+
+            if (matriz[fi-1][co-1]=='o'){
+                if (co==co2 && fi>=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2][co2-1]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2][co2-1]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+                if (co==co2 && fi<=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-2][co2-1]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-2][co2-1]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+
+
+                if (fi==fi2 && co>=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-1][co2]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-1][co2]='+';matriz[fi-1][co-1]='+';
+                         for(int h=0;h<7;h++){
+                             for(int p=0;p<7;p++){
+                                 cout<<matriz[h][p]<<"   ";
+                             }
+                             cout<<endl;
+                         }
+                    }
+
+                }
+
+                if (fi==fi2 && co<=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-1][co2-2]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-1][co2-2]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+                 }
+
+            //GIANCARLO AGREGA ESTO NADA MAS A LA FUNCION JUEGA()
+            for(int l=0;l<7;l++){
+                for (int k=0;k<7;k++){
+                    if(matriz[l][k]=='o'){
+                        cont=cont+1;
+                    }
+                }
+            }
+
+            if(cont==1){
+                i=i+200;
+                cout<<"JUEGO TERMINADO"<<endl;
+
+            }
+            else{
+                cont=0;
+            }
+            //HASTA AQUIIIIIIIII
+
+
+            }
+            else{
+                cout<<"no valido, repita"<<endl;
+            }
+        }
+
+
+
+
+
+    }
+
+    if (n == 1) {
+        int cont=0;
+        int fi;
+        int co;
+        int fi2;
+        int co2;
+        char matriz[7][7] = {{' ',' ','o','o','o',' ',' '},
+                             {' ',' ','o','o','o',' ',' '},
+                             {'o','o','o','o','o','o','o'},
+                             {'o','o','o','+','o','o','o'},
+                             {'o','o','o','o','o','o','o'},
+                             {' ',' ','o','o','o',' ',' '},
+                             {' ',' ','o','o','o',' ',' '}};
+        for (int i = 0; i < 7; i++) {
+            for (int j = 0; j < 7; j++) {
+                cout << matriz[i][j] << "   ";
+            }
+            cout << endl;
+        }
+
+        for (int i = 0; i < 100; i = i++) {
+            cout << "Ingrese la posicion de origen(fila,columna)" << endl;
+            cin >> fi;
+            cin >> co;
+            cout << "Ingrese la posicion de destino(fila,columna)" << endl;
+            cin >> fi2;
+            cin >> co2;
+
+
+            if (matriz[fi-1][co-1]=='o'){
+                if (co==co2 && fi>=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2][co2-1]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2][co2-1]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+                if (co==co2 && fi<=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-2][co2-1]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-2][co2-1]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+
+
+                if (fi==fi2 && co>=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-1][co2]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-1][co2]='+';matriz[fi-1][co-1]='+';
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+
+                if (fi==fi2 && co<=4) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-1][co2-2]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-1][co2-2]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<7;h++){
+                            for(int p=0;p<7;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+                }
+
+                //GIANCARLO AGREGA ESTO NADA MAS A LA FUNCION JUEGA()
+                for(int l=0;l<7;l++){
+                    for (int k=0;k<7;k++){
+                        if(matriz[l][k]=='o'){
+                            cont=cont+1;
+                        }
+                    }
+                }
+
+                if(cont==1){
+                    i=i+200;
+                    cout<<"JUEGO TERMINADO"<<endl;
+
+                }
+                else{
+                    cont=0;
+                }
+                //HASTA AQUIIIIIIIII
+
+
+            }
+            else{
+                cout<<"no valido, repita"<<endl;
+            }
+        }
+
+
+
+
+
+    }
+
+    if (n == 3) {
+        int cont=0;
+        int fi;
+        int co;
+        int fi2;
+        int co2;
+        char matriz[9][9] = {{' ',' ',' ','o','o','o',' ',' ',' '},
+                             {' ',' ',' ','o','o','o',' ',' ',' '},
+                             {' ',' ',' ','o','o','o',' ',' ',' '},
+                             {'o','o','o','o','o','o','o','o','o'},
+                             {'o','o','o','o','+','o','o','o','o'},
+                             {'o','o','o','o','o','o','o','o','o'},
+                             {' ',' ',' ','o','o','o',' ',' ',' '},
+                             {' ',' ',' ','o','o','o',' ',' ',' '},
+                             {' ',' ',' ','o','o','o',' ',' ',' '}};
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                cout << matriz[i][j] << "   ";
+            }
+            cout << endl;
+        }
+
+        for (int i = 0; i < 100; i = i++) {
+            cout << "Ingrese la posicion de origen(fila,columna)" << endl;
+            cin >> fi;
+            cin >> co;
+            cout << "Ingrese la posicion de destino(fila,columna)" << endl;
+            cin >> fi2;
+            cin >> co2;
+
+
+            if (matriz[fi-1][co-1]=='o'){
+                if (co==co2 && fi>=5) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2][co2-1]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2][co2-1]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<9;h++){
+                            for(int p=0;p<9;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+                if (co==co2 && fi<=5) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-2][co2-1]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-2][co2-1]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<9;h++){
+                            for(int p=0;p<9;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+
+
+                if (fi==fi2 && co>=5) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-1][co2]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-1][co2]='+';matriz[fi-1][co-1]='+';
+                        for(int h=0;h<9;h++){
+                            for(int p=0;p<9;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+
+                }
+
+                if (fi==fi2 && co<=5) {
+                    if (matriz[fi2 - 1][co2 - 1] =='+' &&  matriz[fi2-1][co2-2]=='o'){
+                        matriz[fi2-1][co2-1]='o';matriz[fi2-1][co2-2]='+';matriz[fi-1][co-1]='+';
+
+                        for(int h=0;h<9;h++){
+                            for(int p=0;p<9;p++){
+                                cout<<matriz[h][p]<<"   ";
+                            }
+                            cout<<endl;
+                        }
+                    }
+                }
+
+
+                for(int l=0;l<9;l++){
+                    for (int k=0;k<9;k++){
+                        if(matriz[l][k]=='o'){
+                            cont=cont+1;
+                        }
+                    }
+                }
+
+                if(cont==1){
+                    i=i+200;
+                    cout<<"JUEGO TERMINADO !FELICIDADES!"<<endl;
+
+                }
+                else{
+                    cont=0;
+                }
+
+
+
+            }
+            else{
+                cout<<"no valido, repita"<<endl;
+            }
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+}

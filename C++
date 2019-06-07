@@ -6,9 +6,9 @@ int main() {
     cout << "--------------------------------------" << endl;
     
     cout << "Que tipo desea jugar" << endl;
-    cout << "Estilo Ingles: Introduzca el numero 1 " << endl;
-    cout << "Estilo frances: Introduzca el numero 2 " << endl;
-    cout << "Estilo aleman: Introduzca el numero 3" << endl;
+    cout << "Estilo Ingles : Introduzca el numero 1 " << endl;
+    cout << "Estilo frances : Introduzca el numero 2 " << endl;
+    cout << "Estilo aleman : Introduzca el numero 3" << endl;
     cin >> n;
 
     if (n == 2) {

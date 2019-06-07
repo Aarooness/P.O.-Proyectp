@@ -2,11 +2,9 @@
 using namespace std;
 int main() {
     int n;
-    cout << "Bienvenido a Zenku" << endl;
-    cout<<"'o' es la bolita a mover "<<endl;
-    cout<<"'+' representa los espacios vacios"<<endl;
-    cout<<"ganas cuando solo tines un 'o' en el tablero"<<endl;
-
+    cout << "Menú Juego Senku" << endl;
+    cout << "--------------------------------------" << endl;
+    
     cout << "Que tipo desea jugar" << endl;
     cout << "Estilo Ingles: Introduzca el numero 1 " << endl;
     cout << "Estilo frances: Introduzca el numero 2 " << endl;
@@ -97,7 +95,7 @@ int main() {
                     }
                  }
 
-            //GIANCARLO AGREGA ESTO NADA MAS A LA FUNCION JUEGA()
+            
             for(int l=0;l<7;l++){
                 for (int k=0;k<7;k++){
                     if(matriz[l][k]=='o'){
@@ -114,7 +112,7 @@ int main() {
             else{
                 cont=0;
             }
-            //HASTA AQUIIIIIIIII
+            
 
 
             }
@@ -213,7 +211,7 @@ int main() {
                     }
                 }
 
-                //GIANCARLO AGREGA ESTO NADA MAS A LA FUNCION JUEGA()
+                
                 for(int l=0;l<7;l++){
                     for (int k=0;k<7;k++){
                         if(matriz[l][k]=='o'){
@@ -230,7 +228,7 @@ int main() {
                 else{
                     cont=0;
                 }
-                //HASTA AQUIIIIIIIII
+                
 
 
             }
